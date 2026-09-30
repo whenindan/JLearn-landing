@@ -20,9 +20,13 @@
       <span>JLearn</span>
     </a>
     <nav class="nav-links">
-      <a href="#crew">Meet the crew</a>
-      <a href="#how">How it works</a>
-      <a href="#download" class="btn btn-small">Get the app</a>
+      <a href="#crew" data-i18n="nav.crew">Meet the crew</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
+      <a href="#download" class="btn btn-small" data-i18n="nav.cta">Get the app</a>
     </nav>
   </div>
 </header>
@@ -36,26 +40,26 @@
         <div class="chips">
           <span class="chip chip-dark">N5</span>
           <span class="chip">N4</span>
-          <span class="chip chip-streak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 2.5 0-3 0-5 1-8z"/></svg>Daily streak</span>
+          <span class="chip chip-streak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 2.5 0-3 0-5 1-8z"/></svg><span data-i18n="hero.streak">Daily streak</span></span>
         </div>
-        <h1>Learn Japanese with <span class="hl">friends</span>, not flashcards.</h1>
-        <p class="lead">Five-minute lessons, real conversations, and a crew of animal friends who cheer you on. No guilt trips.</p>
+        <h1 data-i18n-html="hero.title">Learn Japanese with <span class="hl">friends</span>, not flashcards.</h1>
+        <p class="lead" data-i18n="hero.lead">Five-minute lessons, real conversations, and a crew of animal friends who cheer you on. No guilt trips.</p>
         <div class="store-row">
           <!-- TODO: replace hrefs with real App Store / Google Play links -->
-          <a class="store" href="#" aria-label="Download on the App Store">
+          <a class="store" href="#" data-i18n-aria="store.apple.aria" aria-label="Download on the App Store">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg>
-            <span><small>Download on the</small>App Store</span>
+            <span><small data-i18n="store.apple">Download on the</small>App Store</span>
           </a>
-          <a class="store" href="#" aria-label="Get it on Google Play">
+          <a class="store" href="#" data-i18n-aria="store.play.aria" aria-label="Get it on Google Play">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.3 13.3 12l-9.7 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m16.6 15.3-3.3-3.3 3.3-3.3 3.8 2.2c1 .6 1 1.6 0 2.2z"/><path fill="#EA4335" d="M16.6 15.3 13.3 12l-9.7 9.7c.4.2.9.2 1.4-.1z"/><path fill="#4285F4" d="M16.6 8.7 5 2.4c-.5-.3-1-.3-1.4-.1l9.7 9.7z"/></svg>
-            <span><small>Get it on</small>Google Play</span>
+            <span><small data-i18n="store.play">Get it on</small>Google Play</span>
           </a>
         </div>
         <div class="qr-inline">
           <div class="qr" data-qr aria-label="QR code placeholder"></div>
           <div>
-            <strong>Scan to download</strong>
-            <span>Point your phone camera here. Works on iOS and Android.</span>
+            <strong data-i18n="qr.title">Scan to download</strong>
+            <span data-i18n="qr.body">Point your phone camera here. Works on iOS and Android.</span>
           </div>
         </div>
       </div>
@@ -72,9 +76,9 @@
         </div>
         <div class="float float-ok">
           <span class="ok-dot"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-          <div><b>Correct!</b><span class="bubble">いっしょに がんばろう！</span></div>
+          <div><b data-i18n="hero.correct">Correct!</b><span class="bubble">いっしょに がんばろう！</span></div>
         </div>
-        <div class="float float-kana">がっこう<small>school</small></div>
+        <div class="float float-kana">がっこう<small data-i18n="hero.school">school</small></div>
       </div>
     </div>
   </section>
@@ -83,33 +87,33 @@
   <section class="section" id="crew">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">なかまたち · THE CREW</div>
-        <h2>Three friends, one goal: you speaking Japanese.</h2>
-        <p class="sub">Tap a friend to say hi.</p>
+        <div class="eyebrow">なかまたち · <span data-i18n="crew.eyebrow">THE CREW</span></div>
+        <h2 data-i18n="crew.title">Three friends, one goal: you speaking Japanese.</h2>
+        <p class="sub" data-i18n="crew.sub">Tap a friend to say hi.</p>
       </div>
       <div class="crew-grid">
         <article class="card" data-char>
           <div class="card-art art-green"><div class="poko st-idle"><!--POKO--></div></div>
           <div class="card-body">
-            <div class="card-title"><h3>Poko</h3><span class="jp">ぽこ</span><span class="tag tag-green">Guide</span></div>
-            <p>A patient tanuki who explains grammar like a favourite teacher. Knows everything, never shows off.</p>
-            <div class="quote"><b>いっしょに がんばろう！</b><span>"Let's do our best together!"</span></div>
+            <div class="card-title"><h3>Poko</h3><span class="jp">ぽこ</span><span class="tag tag-green" data-i18n="poko.tag">Guide</span></div>
+            <p data-i18n="poko.desc">A patient tanuki who explains grammar like a favourite teacher. Knows everything, never shows off.</p>
+            <div class="quote"><b>いっしょに がんばろう！</b><span data-i18n="poko.quote">"Let's do our best together!"</span></div>
           </div>
         </article>
         <article class="card" data-char>
           <div class="card-art art-yellow"><div class="mame st-idle"><!--MAME--></div></div>
           <div class="card-body">
-            <div class="card-title"><h3>Mame</h3><span class="jp">まめ</span><span class="tag tag-yellow">Buddy</span></div>
-            <p>A shiba learning right alongside you. Cheers loudly, gets things wrong too, so your mistakes feel normal.</p>
-            <div class="quote"><b>やった！できた！</b><span>"Yay! We did it!"</span></div>
+            <div class="card-title"><h3>Mame</h3><span class="jp">まめ</span><span class="tag tag-yellow" data-i18n="mame.tag">Buddy</span></div>
+            <p data-i18n="mame.desc">A shiba learning right alongside you. Cheers loudly, gets things wrong too, so your mistakes feel normal.</p>
+            <div class="quote"><b>やった！できた！</b><span data-i18n="mame.quote">"Yay! We did it!"</span></div>
           </div>
         </article>
         <article class="card" data-char>
           <div class="card-art art-peach"><div class="kon st-idle"><!--KON--></div></div>
           <div class="card-body">
-            <div class="card-title"><h3>Kon</h3><span class="jp">こん</span><span class="tag tag-coral">Rival</span></div>
-            <p>A smug little fox who shows up on leaderboards and timed rounds. Secretly rooting for you.</p>
-            <div class="quote"><b>ふーん、まあまあだね。</b><span>"Hmph. Not bad, I guess."</span></div>
+            <div class="card-title"><h3>Kon</h3><span class="jp">こん</span><span class="tag tag-coral" data-i18n="kon.tag">Rival</span></div>
+            <p data-i18n="kon.desc">A smug little fox who shows up on leaderboards and timed rounds. Secretly rooting for you.</p>
+            <div class="quote"><b>ふーん、まあまあだね。</b><span data-i18n="kon.quote">"Hmph. Not bad, I guess."</span></div>
           </div>
         </article>
       </div>
@@ -120,21 +124,21 @@
   <section class="section section-alt" id="how">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">まなびかた · HOW IT WORKS</div>
-        <h2>A little every day goes a long way.</h2>
+        <div class="eyebrow">まなびかた · <span data-i18n="how.eyebrow">HOW IT WORKS</span></div>
+        <h2 data-i18n="how.title">A little every day goes a long way.</h2>
       </div>
       <div class="steps">
         <div class="step">
           <span class="icon icon-coral"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/></svg></span>
-          <h3>Bite-size lessons</h3><p>Hiragana to real conversations in five-minute sessions that fit your day.</p>
+          <h3 data-i18n="how.1t">Bite-size lessons</h3><p data-i18n="how.1b">Hiragana to real conversations in five-minute sessions that fit your day.</p>
         </div>
         <div class="step">
           <span class="icon icon-green"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM6 11a6 6 0 0 0 12 0M12 17v4"/></svg></span>
-          <h3>Speak out loud</h3><p>Practise pronunciation and the crew listens, reacts and helps you improve.</p>
+          <h3 data-i18n="how.2t">Speak out loud</h3><p data-i18n="how.2b">Practise pronunciation and the crew listens, reacts and helps you improve.</p>
         </div>
         <div class="step">
           <span class="icon icon-yellow"><svg viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 2.5 0-3 0-5 1-8z"/></svg></span>
-          <h3>Friendly streaks</h3><p>Keep a streak going with Mame. Miss a day? Mame just gets sleepy.</p>
+          <h3 data-i18n="how.3t">Friendly streaks</h3><p data-i18n="how.3b">Keep a streak going with Mame. Miss a day? Mame just gets sleepy.</p>
         </div>
       </div>
     </div>
@@ -146,23 +150,23 @@
       <div class="cta">
         <span class="watermark">始</span>
         <div class="cta-copy">
-          <div class="cta-label">FREE · iOS &amp; ANDROID</div>
-          <h2>Start your first lesson today.</h2>
-          <p>Download JLearn and meet Poko, Mame and Kon.</p>
+          <div class="cta-label" data-i18n-html="cta.label">FREE · iOS &amp; ANDROID</div>
+          <h2 data-i18n="cta.title">Start your first lesson today.</h2>
+          <p data-i18n="cta.body">Download JLearn and meet Poko, Mame and Kon.</p>
           <div class="store-row">
-            <a class="store store-light" href="#" aria-label="Download on the App Store">
+            <a class="store store-light" href="#" data-i18n-aria="store.apple.aria" aria-label="Download on the App Store">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg>
-              <span><small>Download on the</small>App Store</span>
+              <span><small data-i18n="store.apple">Download on the</small>App Store</span>
             </a>
-            <a class="store store-light" href="#" aria-label="Get it on Google Play">
+            <a class="store store-light" href="#" data-i18n-aria="store.play.aria" aria-label="Get it on Google Play">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.3 13.3 12l-9.7 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m16.6 15.3-3.3-3.3 3.3-3.3 3.8 2.2c1 .6 1 1.6 0 2.2z"/><path fill="#EA4335" d="M16.6 15.3 13.3 12l-9.7 9.7c.4.2.9.2 1.4-.1z"/><path fill="#4285F4" d="M16.6 8.7 5 2.4c-.5-.3-1-.3-1.4-.1l9.7 9.7z"/></svg>
-              <span><small>Get it on</small>Google Play</span>
+              <span><small data-i18n="store.play">Get it on</small>Google Play</span>
             </a>
           </div>
         </div>
         <div class="cta-qr">
           <div class="qr qr-big" data-qr aria-label="QR code placeholder"></div>
-          <span>Scan with your phone</span>
+          <span data-i18n="cta.scan">Scan with your phone</span>
         </div>
         <div class="cta-mascot mame st-idle" aria-hidden="true"><!--MAME--></div>
       </div>
@@ -174,9 +178,9 @@
   <div class="wrap footer-inner">
     <a href="#" class="logo"><span class="logo-mark">J</span><span>JLearn</span></a>
     <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Contact</a>
+      <a href="#" data-i18n="foot.privacy">Privacy</a>
+      <a href="#" data-i18n="foot.terms">Terms</a>
+      <a href="#" data-i18n="foot.contact">Contact</a>
     </div>
     <span class="copy">© 2026 JLearn</span>
   </div>

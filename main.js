@@ -63,3 +63,89 @@
   const svg = `<svg viewBox="0 0 ${N} ${N}" shape-rendering="crispEdges" role="img" aria-label="QR code (placeholder)"><path d="${d}" fill="#1F1A17"/></svg>`;
   document.querySelectorAll('[data-qr]').forEach((el) => { el.innerHTML = svg; });
 })();
+
+// English / Vietnamese copy. English is the markup default; Vietnamese is applied on switch.
+// Picks ?lang=vi|en, then the saved choice, then the browser language.
+(function i18n() {
+  const VI = {
+    'meta.title': 'JLearn · Học tiếng Nhật cùng bạn bè',
+    'meta.desc': 'JLearn giúp việc học tiếng Nhật vui như đi chơi cùng bạn bè. Bài học ngắn gọn cùng Poko, Mame và Kon.',
+    'nav.crew': 'Nhóm bạn',
+    'nav.how': 'Cách học',
+    'nav.cta': 'Tải ứng dụng',
+    'hero.streak': 'Chuỗi ngày học',
+    'hero.title': 'Học tiếng Nhật cùng <span class="hl">bạn bè</span>, không phải học vẹt.',
+    'hero.lead': 'Bài học 5 phút, hội thoại thực tế, cùng một nhóm bạn thú đáng yêu luôn cổ vũ bạn. Không áp lực, không trách móc.',
+    'hero.correct': 'Chính xác!',
+    'hero.school': 'trường học',
+    'store.apple': 'Tải về trên',
+    'store.play': 'Tải nội dung trên',
+    'store.apple.aria': 'Tải về trên App Store',
+    'store.play.aria': 'Tải nội dung trên Google Play',
+    'qr.title': 'Quét mã để tải',
+    'qr.body': 'Mở camera điện thoại và quét mã. Dùng được trên iOS và Android.',
+    'crew.eyebrow': 'NHÓM BẠN',
+    'crew.title': 'Ba người bạn, một mục tiêu: giúp bạn nói được tiếng Nhật.',
+    'crew.sub': 'Chạm vào một bạn để chào nhé.',
+    'poko.tag': 'Dẫn dắt',
+    'poko.desc': 'Chú tanuki kiên nhẫn, giảng ngữ pháp như một thầy giáo bạn yêu quý. Biết mọi thứ nhưng chẳng bao giờ khoe khoang.',
+    'poko.quote': '“Cùng nhau cố gắng nhé!”',
+    'mame.tag': 'Bạn học',
+    'mame.desc': 'Chú shiba đang học cùng bạn. Cổ vũ nhiệt tình, cũng hay sai như bạn, nên mắc lỗi chẳng có gì đáng ngại.',
+    'mame.quote': '“Yay! Làm được rồi!”',
+    'kon.tag': 'Đối thủ',
+    'kon.desc': 'Chú cáo nhỏ hơi kiêu, hay xuất hiện ở bảng xếp hạng và các vòng tính giờ. Thật ra vẫn luôn ủng hộ bạn.',
+    'kon.quote': '“Hừm. Cũng tạm được đấy.”',
+    'how.eyebrow': 'CÁCH HỌC',
+    'how.title': 'Mỗi ngày một chút, tiến bộ thật nhiều.',
+    'how.1t': 'Bài học ngắn gọn',
+    'how.1b': 'Từ bảng chữ hiragana đến hội thoại thực tế, mỗi buổi chỉ 5 phút, vừa vặn với lịch của bạn.',
+    'how.2t': 'Luyện nói thành tiếng',
+    'how.2b': 'Tập phát âm, cả nhóm sẽ lắng nghe, phản hồi và giúp bạn tiến bộ.',
+    'how.3t': 'Chuỗi ngày học vui vẻ',
+    'how.3b': 'Giữ chuỗi ngày học cùng Mame. Lỡ bỏ một ngày? Mame chỉ hơi buồn ngủ thôi.',
+    'cta.label': 'MIỄN PHÍ · iOS &amp; ANDROID',
+    'cta.title': 'Bắt đầu bài học đầu tiên ngay hôm nay.',
+    'cta.body': 'Tải JLearn và làm quen với Poko, Mame và Kon.',
+    'cta.scan': 'Quét bằng điện thoại',
+    'foot.privacy': 'Quyền riêng tư',
+    'foot.terms': 'Điều khoản',
+    'foot.contact': 'Liên hệ',
+  };
+
+  const nodes = {
+    text: [...document.querySelectorAll('[data-i18n]')],
+    html: [...document.querySelectorAll('[data-i18n-html]')],
+    aria: [...document.querySelectorAll('[data-i18n-aria]')],
+  };
+  const desc = document.querySelector('meta[name="description"]');
+  // Snapshot the English markup so switching back needs no second dictionary.
+  const EN = { 'meta.title': document.title, 'meta.desc': desc.content };
+  nodes.text.forEach((el) => { EN[el.dataset.i18n] = el.textContent; });
+  nodes.html.forEach((el) => { EN[el.dataset.i18nHtml] = el.innerHTML; });
+  nodes.aria.forEach((el) => { EN[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
+
+  function apply(lang) {
+    const dict = lang === 'vi' ? VI : EN;
+    const t = (k) => dict[k] ?? EN[k];
+    document.documentElement.lang = lang;
+    document.title = t('meta.title');
+    desc.content = t('meta.desc');
+    nodes.text.forEach((el) => { el.textContent = t(el.dataset.i18n); });
+    nodes.html.forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
+    nodes.aria.forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+    document.querySelectorAll('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('jlearn-lang'); } catch (e) {}
+  const param = new URLSearchParams(location.search).get('lang');
+  const browser = (navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en';
+  const initial = [param, saved, browser].find((l) => l === 'vi' || l === 'en');
+  if (initial === 'vi') apply('vi');
+
+  document.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => {
+    apply(b.dataset.lang);
+    try { localStorage.setItem('jlearn-lang', b.dataset.lang); } catch (e) {}
+  }));
+})();
