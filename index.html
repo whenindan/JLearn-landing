@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JLearn · Learn Japanese with friends</title>
 <meta name="description" content="JLearn makes learning Japanese feel like hanging out with friends. Bite-size lessons with Poko, Mame and Kon.">
-<meta name="theme-color" content="#FBF6EC">
+<meta name="theme-color" content="#FBF8F3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -33,7 +33,11 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <div class="eyebrow">にほんご · JAPANESE</div>
+        <div class="chips">
+          <span class="chip chip-dark">N5</span>
+          <span class="chip">N4</span>
+          <span class="chip chip-streak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 2.5 0-3 0-5 1-8z"/></svg>Daily streak</span>
+        </div>
         <h1>Learn Japanese with <span class="hl">friends</span>, not flashcards.</h1>
         <p class="lead">Five-minute lessons, real conversations, and a crew of animal friends who cheer you on. No guilt trips.</p>
         <div class="store-row">
@@ -57,13 +61,20 @@
       </div>
 
       <div class="hero-art" aria-hidden="true">
-        <div class="bubble">いっしょに がんばろう！</div>
-        <div class="stage">
-          <div class="c c-mame mame st-idle"><!--MAME--></div>
-          <div class="c c-poko poko st-idle"><!--POKO--></div>
-          <div class="c c-kon kon st-idle"><!--KON--></div>
+        <div class="hero-panel">
+          <span class="watermark">学</span>
+          <div class="panel-label">いっしょに まなぼう</div>
+          <div class="stage">
+            <div class="c c-mame mame st-idle"><!--MAME--></div>
+            <div class="c c-poko poko st-idle"><!--POKO--></div>
+            <div class="c c-kon kon st-idle"><!--KON--></div>
+          </div>
         </div>
-        <div class="ground"></div>
+        <div class="float float-ok">
+          <span class="ok-dot"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+          <div><b>Correct!</b><span class="bubble">いっしょに がんばろう！</span></div>
+        </div>
+        <div class="float float-kana">がっこう<small>school</small></div>
       </div>
     </div>
   </section>
@@ -78,25 +89,25 @@
       </div>
       <div class="crew-grid">
         <article class="card" data-char>
-          <div class="card-art" style="background:#F1E6D6"><div class="poko st-idle"><!--POKO--></div></div>
+          <div class="card-art art-green"><div class="poko st-idle"><!--POKO--></div></div>
           <div class="card-body">
-            <div class="card-title"><h3>Poko</h3><span class="jp" style="color:#8C6B4F">ぽこ</span><span class="tag" style="background:#2F4A7A">GUIDE</span></div>
+            <div class="card-title"><h3>Poko</h3><span class="jp">ぽこ</span><span class="tag tag-green">Guide</span></div>
             <p>A patient tanuki who explains grammar like a favourite teacher. Knows everything, never shows off.</p>
             <div class="quote"><b>いっしょに がんばろう！</b><span>"Let's do our best together!"</span></div>
           </div>
         </article>
         <article class="card" data-char>
-          <div class="card-art" style="background:#F6E9D3"><div class="mame st-idle"><!--MAME--></div></div>
+          <div class="card-art art-yellow"><div class="mame st-idle"><!--MAME--></div></div>
           <div class="card-body">
-            <div class="card-title"><h3>Mame</h3><span class="jp" style="color:#C08A45">まめ</span><span class="tag" style="background:#B53A22">BUDDY</span></div>
+            <div class="card-title"><h3>Mame</h3><span class="jp">まめ</span><span class="tag tag-yellow">Buddy</span></div>
             <p>A shiba learning right alongside you. Cheers loudly, gets things wrong too, so your mistakes feel normal.</p>
             <div class="quote"><b>やった！できた！</b><span>"Yay! We did it!"</span></div>
           </div>
         </article>
         <article class="card" data-char>
-          <div class="card-art" style="background:#F5DCCB"><div class="kon st-idle"><!--KON--></div></div>
+          <div class="card-art art-peach"><div class="kon st-idle"><!--KON--></div></div>
           <div class="card-body">
-            <div class="card-title"><h3>Kon</h3><span class="jp" style="color:#C95A22">こん</span><span class="tag" style="background:#2B2320">RIVAL</span></div>
+            <div class="card-title"><h3>Kon</h3><span class="jp">こん</span><span class="tag tag-coral">Rival</span></div>
             <p>A smug little fox who shows up on leaderboards and timed rounds. Secretly rooting for you.</p>
             <div class="quote"><b>ふーん、まあまあだね。</b><span>"Hmph. Not bad, I guess."</span></div>
           </div>
@@ -113,9 +124,18 @@
         <h2>A little every day goes a long way.</h2>
       </div>
       <div class="steps">
-        <div class="step"><span class="num">1</span><h3>Bite-size lessons</h3><p>Hiragana to real conversations in five-minute sessions that fit your day.</p></div>
-        <div class="step"><span class="num">2</span><h3>Speak out loud</h3><p>Practise pronunciation and the crew listens, reacts and helps you improve.</p></div>
-        <div class="step"><span class="num">3</span><h3>Friendly streaks</h3><p>Keep a streak going with Mame. Miss a day? Mame just gets sleepy.</p></div>
+        <div class="step">
+          <span class="icon icon-coral"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/></svg></span>
+          <h3>Bite-size lessons</h3><p>Hiragana to real conversations in five-minute sessions that fit your day.</p>
+        </div>
+        <div class="step">
+          <span class="icon icon-green"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM6 11a6 6 0 0 0 12 0M12 17v4"/></svg></span>
+          <h3>Speak out loud</h3><p>Practise pronunciation and the crew listens, reacts and helps you improve.</p>
+        </div>
+        <div class="step">
+          <span class="icon icon-yellow"><svg viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 2.5 0-3 0-5 1-8z"/></svg></span>
+          <h3>Friendly streaks</h3><p>Keep a streak going with Mame. Miss a day? Mame just gets sleepy.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -124,9 +144,11 @@
   <section class="section" id="download">
     <div class="wrap">
       <div class="cta">
+        <span class="watermark">始</span>
         <div class="cta-copy">
+          <div class="cta-label">FREE · iOS &amp; ANDROID</div>
           <h2>Start your first lesson today.</h2>
-          <p>Free to download on iPhone and Android.</p>
+          <p>Download JLearn and meet Poko, Mame and Kon.</p>
           <div class="store-row">
             <a class="store store-light" href="#" aria-label="Download on the App Store">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg>

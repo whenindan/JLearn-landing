@@ -60,6 +60,6 @@
 
   let d = '';
   grid.forEach((row, r) => row.forEach((on, c) => { if (on) d += `M${c} ${r}h1v1h-1z`; }));
-  const svg = `<svg viewBox="0 0 ${N} ${N}" shape-rendering="crispEdges" role="img" aria-label="QR code (placeholder)"><path d="${d}" fill="#2B2320"/></svg>`;
+  const svg = `<svg viewBox="0 0 ${N} ${N}" shape-rendering="crispEdges" role="img" aria-label="QR code (placeholder)"><path d="${d}" fill="#1F1A17"/></svg>`;
   document.querySelectorAll('[data-qr]').forEach((el) => { el.innerHTML = svg; });
 })();
